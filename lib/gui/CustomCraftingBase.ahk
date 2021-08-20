@@ -33,6 +33,9 @@ CustomCrafting:
   For k, v in WR.CustomCraftingBases.CustomBases[8]
     textList8 .= (!textList8 ? "" : ", ") v
   baseList := ""
+  For k, v in WR.CustomCraftingBases.CustomBases[9]
+    textList8 .= (!textList8 ? "" : ", ") v
+  baseList := ""
   For k, v in Bases
   {
     If ( !IndexOf("talisman",v["tags"]) 
@@ -51,47 +54,52 @@ CustomCrafting:
   Gui, CustomCrafting: +AlwaysOnTop -MinimizeBox
   Gui, CustomCrafting: Add, Button, default gupdateEverything    x225 y180  w150 h23,   Save Configuration
   Gui, CustomCrafting: Add, ComboBox, Sort vCustomCraftingBase xm+5 ym+28 w500, %baseList%
-  Gui, CustomCrafting: Add, Tab2, vInventoryGuiTabs x3 y3 w600 h300 -wrap , Atlas Tier 1|STR Tier 2|DEX Tier 3|INT Tier 4|Hybrid Tier 5|Jewel Tier 6|Abyss Jewel Tier 7|Jewellery Tier 8
+  Gui, CustomCrafting: Add, Tab2, vInventoryGuiTabs x3 y3 w600 h300 -wrap , Group CB1|Group CB2|Group CB3|Group CB4|Group CB5|Group CB6|Group CB7|Group CB8|Group CB9
   Gui, CustomCrafting: Tab, Atlas Tier 1
     Gui, CustomCrafting: Add, Edit, vActiveCraftTier1 ReadOnly y+38 w500 r8 , %textList1%
     Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT1 Base
     Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT1 Base
     Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT1 Base
-  Gui, CustomCrafting: Tab, STR Tier 2
+  Gui, CustomCrafting: Tab, Group CB2
     Gui, CustomCrafting: Add, Edit, vActiveCraftTier2 ReadOnly y+38 w500 r8 , %textList2%
     Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT2 Base
     Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT2 Base
     Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT2 Base
-  Gui, CustomCrafting: Tab, DEX Tier 3
+  Gui, CustomCrafting: Tab, Group CB3
     Gui, CustomCrafting: Add, Edit, vActiveCraftTier3 ReadOnly y+38 w500 r8 , %textList3%
     Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT3 Base
     Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT3 Base
     Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT3 Base
-  Gui, CustomCrafting: Tab, INT Tier 4
+  Gui, CustomCrafting: Tab, Group CB4
     Gui, CustomCrafting: Add, Edit, vActiveCraftTier4 ReadOnly y+38 w500 r8 , %textList4%
     Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT4 Base
     Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT4 Base
     Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT4 Base
-  Gui, CustomCrafting: Tab, Hybrid Tier 5
+  Gui, CustomCrafting: Tab, Group CB5
     Gui, CustomCrafting: Add, Edit, vActiveCraftTier5 ReadOnly y+38 w500 r8 , %textList5%
     Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT5 Base
     Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT5 Base
     Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT5 Base
-  Gui, CustomCrafting: Tab, Jewel Tier 6
+  Gui, CustomCrafting: Tab, Group CB6
     Gui, CustomCrafting: Add, Edit, vActiveCraftTier6 ReadOnly y+38 w500 r8 , %textList6%
     Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT6 Base
     Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT6 Base
     Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT6 Base
-  Gui, CustomCrafting: Tab, Abyss Jewel Tier 7
+  Gui, CustomCrafting: Tab, Group CB7
     Gui, CustomCrafting: Add, Edit, vActiveCraftTier7 ReadOnly y+38 w500 r8 , %textList7%
     Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT7 Base
     Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT7 Base
     Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT7 Base
-  Gui, CustomCrafting: Tab, Jewellery Tier 8
+  Gui, CustomCrafting: Tab, Group CB8
     Gui, CustomCrafting: Add, Edit, vActiveCraftTier8 ReadOnly y+38 w500 r8 , %textList8%
     Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT8 Base
     Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT8 Base
     Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT8 Base
+  Gui, CustomCrafting: Tab, Group CB9
+    Gui, CustomCrafting: Add, Edit, vActiveCraftTier9 ReadOnly y+38 w500 r8 , %textList9%
+    Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT9 Base
+    Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT9 Base
+    Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT9 Base
   Gui, CustomCrafting: Show, , Edit Crafting Tiers
 Return
 
