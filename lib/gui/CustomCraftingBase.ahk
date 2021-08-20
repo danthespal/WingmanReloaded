@@ -33,8 +33,9 @@ CustomCrafting:
   For k, v in WR.CustomCraftingBases.CustomBases[8]
     textList8 .= (!textList8 ? "" : ", ") v
   baseList := ""
+  textList9 := ""
   For k, v in WR.CustomCraftingBases.CustomBases[9]
-    textList8 .= (!textList8 ? "" : ", ") v
+    textList9 .= (!textList9 ? "" : ", ") v
   baseList := ""
   For k, v in Bases
   {
@@ -55,7 +56,7 @@ CustomCrafting:
   Gui, CustomCrafting: Add, Button, default gupdateEverything    x225 y180  w150 h23,   Save Configuration
   Gui, CustomCrafting: Add, ComboBox, Sort vCustomCraftingBase xm+5 ym+28 w500, %baseList%
   Gui, CustomCrafting: Add, Tab2, vInventoryGuiTabs x3 y3 w600 h300 -wrap , Group CB1|Group CB2|Group CB3|Group CB4|Group CB5|Group CB6|Group CB7|Group CB8|Group CB9
-  Gui, CustomCrafting: Tab, Atlas Tier 1
+  Gui, CustomCrafting: Tab, Group CB1
     Gui, CustomCrafting: Add, Edit, vActiveCraftTier1 ReadOnly y+38 w500 r8 , %textList1%
     Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT1 Base
     Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT1 Base
