@@ -1,5 +1,6 @@
 ﻿; Wingman Crafting Labels - By DanMarzola
 CustomCrafting:
+  CraftingBasesRequest()
   Global CustomCraftingBase
   textList1 := ""
   For k, v in WR.CustomCraftingBases.CustomBases[1]
@@ -139,3 +140,67 @@ ResetCustomCraftingBase:
         textList .= (!textList ? "" : ", ") v
   GuiControl,, ActiveCraftTier%RxMatch1%, %textList%
 Return
+
+CraftingBasesRequest(endAtRefresh := 0){
+  If (AccountNameSTR = "")
+    AccountNameSTR := POE_RequestAccount().accountName
+  Global RecipeArray := {}
+
+  If (YesEnableCB1||True){
+    If(YesStashCB1){
+        Object := POE_RequestStash(YesStashNumberCB1,0)
+    }Else{
+        Object := POE_RequestStash(StashTabCrafting,0)
+    }
+    TheObject := []
+
+    For k, v in WR.CustomCraftingBases.CustomBases[1]{
+        aux := {"Base Name": v,"ItemObjectArray":[]}
+        TheObject.Push(aux)
+    }
+
+
+    For i, content in Object.items
+    {
+        item := new ItemBuild(content,Object.quadLayout)
+        For k,v in TheObject{
+          if(v["Base Name"] == item.Prop.ItemBase){ 
+            aux := {"ILvL": item.Prop.ItemLevel,"X":item.Prop.StashX,"Y":item.Prop.StashY}
+            flag:=false
+            ; Order Array by ILvL
+            if (v["ItemObjectArray"].Count() > 0)
+            {
+              for ki, vi in v["ItemObjectArray"]
+              {
+                if (vi["ILvL"] < aux["ILvL"])
+                {
+                  TheObject[k]["ItemObjectArray"].InsertAt(ki, aux)
+                  flag:=true
+                  break
+                }
+              }
+              if(!flag){
+                TheObject[k]["ItemObjectArray"].Push(aux)
+              }
+            }
+            Else
+            {
+              TheObject[k]["ItemObjectArray"].Push(aux)
+            }
+          }
+        }
+    }
+
+  }
+  msg:= PrintArray(TheObject)
+  msgbox, % msg
+
+}
+
+	PrintArray(Obj,showkey:=True){
+		local Msg := "", k, v
+		For k, v in Obj {
+			Msg .= (Msg?"`n":"") (showkey? k " : " : "" )  (IsObject(v)?PrintArray(v):v)
+		}
+		Return Msg
+	}

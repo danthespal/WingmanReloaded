@@ -495,111 +495,56 @@ WR_Menu(Function:="",Var*){
 
     ; Crafting Bases
     Gui, Inventory: Tab, Crafting Bases
-    Gui, Inventory: Font, Bold s9 cBlack, Arial
-      Gui, Inventory: Font, Bold s9 cBlack, Arial
-      Gui, Inventory: Add, GroupBox,             w150 h90    section    xm+5 ym+25, Group CB1
-      Gui, Inventory: Font,
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesEnableCB1 Checked%YesEnableCB1%    xs+5  ys+18 , Enable ?
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesKeepCB1 Checked%YesKeepCB1%     xs+5  y+8    , Keep:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-10  hp gUpdateExtra vYesKeepNumberCB1 , %YesKeepNumberCB1%
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesStashCB1 Checked%YesStashCB1%     xs+5  y+8    , Stash:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-100  hp gUpdateExtra vYesStashNumberCB1 , %YesStashNumberCB1%
+
 
       Gui, Inventory: Font, Bold s9 cBlack, Arial
-      Gui, Inventory: Add, GroupBox,             w150 h90    section    xs y+25, Group CB2
+      Gui, Inventory: Add, Text,       Section    xm+5   ym+25, Crafting Bases Management
       Gui, Inventory: Font,
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesEnableCB2 Checked%YesEnableCB2%    xs+5  ys+18 , Enable ?
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesKeepCB2 Checked%YesKeepCB2%     xs+5  y+8    , Keep:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-10  hp gUpdateExtra vYesKeepNumberCB2 , %YesKeepNumberCB2%
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesStashCB2 Checked%YesStashCB2%     xs+5  y+8    , Stash:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-100  hp gUpdateExtra vYesStashNumberCB2 , %YesStashNumberCB2%
 
-      Gui, Inventory: Font, Bold s9 cBlack, Arial
-      Gui, Inventory: Add, GroupBox,             w150 h90    section    xs y+25, Group CB3
+      Gui, Inventory: Font, Bold s8 cBlack, Arial
+      Gui, Inventory: Add, GroupBox, w180 h100 xs+5 yp+20, Group CB1
       Gui, Inventory: Font,
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesEnableCB3 Checked%YesEnableCB3%    xs+5  ys+18 , Enable ?
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesKeepCB3 Checked%YesKeepCB3%     xs+5  y+8    , Keep:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-10  hp gUpdateExtra vYesKeepNumberCB3 , %YesKeepNumberCB3%
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesStashCB3 Checked%YesStashCB3%     xs+5  y+8    , Stash:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-100  hp gUpdateExtra vYesStashNumberCB3 , %YesStashNumberCB3%
+      Gui, Inventory: Add, Checkbox, gUpdateExtra vYesEnableCB1 Checked%YesEnableCB1% xs+11 yp+25, Enable CB1
+      Gui, Inventory: Add, Checkbox, gUpdateExtra vYesStashCB1 Checked%YesStashCB1% xs+11 yp+25, Specific Stash ?
+      Gui, Inventory: Add, Edit, Number w40 x+5 yp-4
+      Gui, Inventory: Add, UpDown, Range1-100 gUpdateExtra vYesStashNumberCB1 x+0 yp hp , %YesStashNumberCB1%
+      Gui, Inventory: Add, Checkbox, gUpdateExtra vYesKeepCB1 Checked%YesKeepCB1% xs+11 yp+29, Keep Higher ILvL ?
+      Gui, Inventory: Add, Edit, Number w40 x+5 yp-4
+      Gui, Inventory: Add, UpDown, Range1-100 gUpdateExtra vYesKeepNumberCB1 x+0 yp hp , %YesKeepNumberCB1%
 
-      ;
-
-      Gui, Inventory: Font, Bold s9 cBlack, Arial
-      Gui, Inventory: Add, GroupBox,             w150 h90    section    xs+160 ym+25, Group CB4
+      Gui, Inventory: Font, Bold s8 cBlack, Arial
+      Gui, Inventory: Add, GroupBox, w180 h100 xs+5 yp+40, Group CB2
       Gui, Inventory: Font,
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesEnableCB4 Checked%YesEnableCB4%    xs+5  ys+18 , Enable ?
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesKeepCB4 Checked%YesKeepCB4%     xs+5  y+8    , Keep:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-10  hp gUpdateExtra vYesKeepNumberCB4 , %YesKeepNumberCB4%
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesStashCB4 Checked%YesStashCB4%     xs+5  y+8    , Stash:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-100  hp gUpdateExtra vYesStashNumberCB4 , %YesStashNumberCB4%
+      Gui, Inventory: Add, Checkbox, gUpdateExtra vYesEnableCB2 Checked%YesEnableCB2% xs+11 yp+25, Enable CB2
+      Gui, Inventory: Add, Checkbox, gUpdateExtra vYesStashCB2 Checked%YesStashCB2% xs+11 yp+25, Specific Stash ?
+      Gui, Inventory: Add, Edit, Number w40 x+5 yp-4
+      Gui, Inventory: Add, UpDown, Range1-100 gUpdateExtra vYesStashNumberCB2 x+0 yp hp , %YesStashNumberCB2%
+      Gui, Inventory: Add, Checkbox, gUpdateExtra vYesKeepCB2 Checked%YesKeepCB2% xs+11 yp+29, Keep Higher ILvL ?
+      Gui, Inventory: Add, Edit, Number w40 x+5 yp-4
+      Gui, Inventory: Add, UpDown, Range1-100 gUpdateExtra vYesKeepNumberCB2 x+0 yp hp , %YesKeepNumberCB2%
 
-      Gui, Inventory: Font, Bold s9 cBlack, Arial
-      Gui, Inventory: Add, GroupBox,             w150 h90    section    xs y+25, Group CB5
+      Gui, Inventory: Font, Bold s8 cBlack, Arial
+      Gui, Inventory: Add, GroupBox, Section w180 h100 x+30 ys+20, Group CB3
       Gui, Inventory: Font,
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesEnableCB5 Checked%YesEnableCB5%    xs+5  ys+18 , Enable ?
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesKeepCB5 Checked%YesKeepCB5%     xs+5  y+8    , Keep:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-10  hp gUpdateExtra vYesKeepNumberCB5 , %YesKeepNumberCB5%
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesStashCB5 Checked%YesStashCB5%     xs+5  y+8    , Stash:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-100  hp gUpdateExtra vYesStashNumberCB5 , %YesStashNumberCB5%
+      Gui, Inventory: Add, Checkbox, gUpdateExtra vYesEnableCB3 Checked%YesEnableCB3% xs+11 yp+25, Enable CB3
+      Gui, Inventory: Add, Checkbox, gUpdateExtra vYesStashCB3 Checked%YesStashCB3% xs+11 yp+25, Specific Stash ?
+      Gui, Inventory: Add, Edit, Number w40 x+5 yp-4
+      Gui, Inventory: Add, UpDown, Range1-100 gUpdateExtra vYesStashNumberCB3 x+0 yp hp , %YesStashNumberCB3%
+      Gui, Inventory: Add, Checkbox, gUpdateExtra vYesKeepCB3 Checked%YesKeepCB3% xs+11 yp+29, Keep Higher ILvL ?
+      Gui, Inventory: Add, Edit, Number w40 x+5 yp-4
+      Gui, Inventory: Add, UpDown, Range1-100 gUpdateExtra vYesKeepNumberCB3 x+0 yp hp , %YesKeepNumberCB3%
 
-      Gui, Inventory: Font, Bold s9 cBlack, Arial
-      Gui, Inventory: Add, GroupBox,             w150 h90    section    xs y+25, Group CB6
+      Gui, Inventory: Font, Bold s8 cBlack, Arial
+      Gui, Inventory: Add, GroupBox, w180 h100 xs yp+40, Group CB4
       Gui, Inventory: Font,
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesEnableCB6 Checked%YesEnableCB6%    xs+5  ys+18 , Enable ?
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesKeepCB6 Checked%YesKeepCB6%     xs+5  y+8    , Keep:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-10  hp gUpdateExtra vYesKeepNumberCB6 , %YesKeepNumberCB6%
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesStashCB6 Checked%YesStashCB6%     xs+5  y+8    , Stash:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-100  hp gUpdateExtra vYesStashNumberCB6 , %YesStashNumberCB6%
+      Gui, Inventory: Add, Checkbox, gUpdateExtra vYesEnableCB4 Checked%YesEnableCB4% xs+11 yp+25, Enable CB4
+      Gui, Inventory: Add, Checkbox, gUpdateExtra vYesStashCB4 Checked%YesStashCB4% xs+11 yp+25, Specific Stash ?
+      Gui, Inventory: Add, Edit, Number w40 x+5 yp-4
+      Gui, Inventory: Add, UpDown, Range1-100 gUpdateExtra vYesStashNumberCB4 x+0 yp hp , %YesStashNumberCB4%
+      Gui, Inventory: Add, Checkbox, gUpdateExtra vYesKeepCB4 Checked%YesKeepCB4% xs+11 yp+29, Keep Higher ILvL ?
+      Gui, Inventory: Add, Edit, Number w40 x+5 yp-4
+      Gui, Inventory: Add, UpDown, Range1-100 gUpdateExtra vYesKeepNumberCB4 x+0 yp hp , %YesKeepNumberCB4%
 
-      ;
-
-      Gui, Inventory: Font, Bold s9 cBlack, Arial
-      Gui, Inventory: Add, GroupBox,             w150 h90    section    xs+160 ym+25, Group CB7
-      Gui, Inventory: Font,
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesEnableCB7 Checked%YesEnableCB7%    xs+5  ys+18 , Enable ?
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesKeepCB7 Checked%YesKeepCB7%     xs+5  y+8    , Keep:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-10  hp gUpdateExtra vYesKeepNumberCB7 , %YesKeepNumberCB7%
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesStashCB7 Checked%YesStashCB7%     xs+5  y+8    , Stash:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-100  hp gUpdateExtra vYesStashNumberCB7 , %YesStashNumberCB7%
-
-      Gui, Inventory: Font, Bold s9 cBlack, Arial
-      Gui, Inventory: Add, GroupBox,             w150 h90    section    xs y+25, Group CB8
-      Gui, Inventory: Font,
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesEnableCB8 Checked%YesEnableCB8%    xs+5  ys+18 , Enable ?
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesKeepCB8 Checked%YesKeepCB8%     xs+5  y+8    , Keep:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-10  hp gUpdateExtra vYesKeepNumberCB8 , %YesKeepNumberCB8%
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesStashCB8 Checked%YesStashCB8%     xs+5  y+8    , Stash:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-100  hp gUpdateExtra vYesStashNumberCB8 , %YesStashNumberCB8%
-
-      Gui, Inventory: Font, Bold s9 cBlack, Arial
-      Gui, Inventory: Add, GroupBox,             w150 h90    section    xs y+25, Group CB9
-      Gui, Inventory: Font,
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesEnableCB9 Checked%YesEnableCB9%    xs+5  ys+18 , Enable ?
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesKeepCB9 Checked%YesKeepCB9%     xs+5  y+8    , Keep:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-10  hp gUpdateExtra vYesKeepNumberCB9 , %YesKeepNumberCB9%
-      Gui, Inventory: Add, Checkbox, gUpdateExtra  vYesStashCB9 Checked%YesStashCB9%     xs+5  y+8    , Stash:
-      Gui, Inventory: Add, Edit, Number w40  x+2 yp-3  w40
-      Gui, Inventory: Add, UpDown, Range1-100  hp gUpdateExtra vYesStashNumberCB9 , %YesStashNumberCB9%
-
-      ;
 
       Gui, Inventory: Add, Button, gCustomCrafting x220 y350  w120,   Edit Crafting Bases
 
