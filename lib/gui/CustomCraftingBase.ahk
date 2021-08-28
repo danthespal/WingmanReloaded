@@ -154,10 +154,20 @@ CraftingBasesRequest(endAtRefresh := 0){
     }
     TheObject := []
 
-    For k, v in WR.CustomCraftingBases.CustomBases[1]{
-        aux := {"Base Name": v,"ItemObjectArray":[]}
-        TheObject.Push(aux)
+    ; Create Object with All
+    For ki, vi in WR.CustomCraftingBases.CustomBases
+    {
+      if(YesEnableCB%ki%)
+      {
+        For k, v in WR.CustomCraftingBases.CustomBases[ki]
+        {
+          aux := {"Base Name": v,"ItemObjectArray":[]}
+          TheObject.Push(aux)
+        }
+      }
+      
     }
+    
 
 
     For i, content in Object.items
@@ -167,6 +177,7 @@ CraftingBasesRequest(endAtRefresh := 0){
           if(v["Base Name"] == item.Prop.ItemBase){ 
             aux := {"ILvL": item.Prop.ItemLevel,"X":item.Prop.StashX,"Y":item.Prop.StashY}
             flag:=false
+            
             ; Order Array by ILvL
             if (v["ItemObjectArray"].Count() > 0)
             {
