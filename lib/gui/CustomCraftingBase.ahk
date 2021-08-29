@@ -144,31 +144,31 @@ Return
 CraftingBasesRequest(endAtRefresh := 0){
   If (AccountNameSTR = "")
     AccountNameSTR := POE_RequestAccount().accountName
-  Global RecipeArray := {}
 
-  If (YesEnableCB1||True){
-    If(YesStashCB1){
-        Object := POE_RequestStash(YesStashNumberCB1,0)
-    }Else{
-        Object := POE_RequestStash(StashTabCrafting,0)
-    }
-    TheObject := []
+  Object := POE_RequestStash(YesStashNumberCB1,0)
+  Global TheObject := []
 
-    ; Create Object with All
+    
+    
+
+; Create Object with All
     For ki, vi in WR.CustomCraftingBases.CustomBases
     {
       if(YesEnableCB%ki%)
       {
+        aux2:= YesEnableCB%ki%
+        aux3:= YesStashNumberCB%ki%
+        aux4:= YesStashCB%ki%
+        aux := (YesStashCB%ki% ? YesStashNumberCB%ki% : (StashTabYesCrafting ? StashTabCrafting : 0))
+        msgbox, YesEnableCB%ki% =  %aux2% YesStashCB%ki% = %aux4% YesStashNumberCB%ki% = %aux3% Final Value = %aux%
         For k, v in WR.CustomCraftingBases.CustomBases[ki]
         {
-          aux := {"Base Name": v,"ItemObjectArray":[]}
+          aux := {"Base Name": v,"StashNumber": aux ,"ItemObjectArray":[]}
           TheObject.Push(aux)
         }
       }
       
     }
-    
-
 
     For i, content in Object.items
     {
@@ -201,8 +201,6 @@ CraftingBasesRequest(endAtRefresh := 0){
           }
         }
     }
-
-  }
   msg:= PrintArray(TheObject)
   msgbox, % msg
 

@@ -54,90 +54,6 @@
 		, "Beast"
 		, "Vial"]
 	
-	; List Crafting Atlas Bases + Special Drops
-	Global DefaultcraftingBasesT1  := ["Apothecary's Gloves"
-		,"Blessed Boots"
-		,"Fingerless Silk Gloves"
-		,"Gripped Gloves"
-		,"Spiked Gloves"
-		,"Two-Toned Boots"
-		,"Convoking Wand"
-		,"Bone Helmet"
-		,"Artillery Quiver"
-		,"Marble Amulet"
-		,"Seaglass Amulet"
-		,"Blue Pearl Amulet"
-		,"Iolite Ring"
-		,"Vanguard Belt"
-		,"Crystal Belt"
-		,"Opal Ring"
-		,"Steel Ring"
-		,"Stygian Vise"
-		,"Vermillion Ring"
-		,"Grasping Mail"
-		,"Sacrificial Garb"
-		,"Brimstone Treads"
-		,"Stormrider Boots"
-		,"Dreamquest Slippers"
-		,"Debilitation Gauntlets"
-		,"Sinistral Gloves"
-		,"Nexus Gloves"
-		,"Penitent Mask"
-		,"Blizzard Crown"
-		,"Archdemon Crown"
-		,"Heat-attuned Tower Shield"
-		,"Cold-attuned Buckle"
-		,"Transfer-attuned Spirit Shield"
-		,"Penitent Mask"]
-	Global DefaultcraftingBasesT2 := ["Glorious Plate"
-		,"Astral Plate"
-		,"Titan Greaves"
-		,"Titan Gauntlets"
-		,"Royal Burgonet"
-		,"Eternal Burgonet"
-		,"Pinnacle Tower Shield"]
-	Global DefaultcraftingBasesT3 := ["Assassin's Garb"
-		,"Zodiac Leather"
-		,"Slink Boots"
-		,"Slink Gloves"
-		,"Lion Pelt"
-		,"Imperial Buckler"]
-	Global DefaultcraftingBasesT4 := ["Vaal Regalia"
-		,"Sorcerer Boots"
-		,"Sorcerer Gloves"
-		,"Hubris Circlet"
-		,"Titanium Spirit Shield"
-		,"Harmonic Spirit Shield"]
-	Global DefaultcraftingBasesT5 := ["Triumphant Lamellar"
-		,"Dragonscale Gauntlets"
-		,"Archon Kite Shield"
-		,"Murder Mitts"
-		,"Crusader Gloves"]
-	Global DefaultcraftingBasesT6 := ["Cobalt Jewel"
-		, "Viridian Jewel"
-		, "Crimson Jewel"]
-	Global DefaultcraftingBasesT7 := ["Searching Eye Jewel"
-		, "Murderous Eye Jewel"
-		, "Ghastly Eye Jewel"]
-	Global DefaultcraftingBasesT8 := ["Onyx Amulet"
-		, "Turquoise Amulet"
-		, "Citrine Amulet"
-		, "Agate Amulet"
-		, "Prismatic Ring"
-		, "Two-Stone Ring"
-		, "Diamond Ring"]
-
-	Global craftingBasesT1 := []
-	Global craftingBasesT2 := []
-	Global craftingBasesT3 := []
-	Global craftingBasesT4 := []
-	Global craftingBasesT5 := []
-	Global craftingBasesT6 := []
-	Global craftingBasesT7 := []
-	Global craftingBasesT8 := []
-	; Custom Undesirable Mods
-	Global CustomUndesirableMods := []
-	Global DefaultCustomUndesirableMods := ["Double Click to edit or delete this row"]
 	; Create Executable group for gameHotkey, IfWinActive
 	Global POEGameArr := ["PathOfExile.exe", "PathOfExile_x64.exe", "PathOfExileSteam.exe", "PathOfExile_x64Steam.exe", "PathOfExile_KG.exe", "PathOfExile_x64_KG.exe", "PathOfExile_x64EGS.exe", "PathOfExileEGS.exe"]
 	for n, exe in POEGameArr
@@ -765,37 +681,6 @@
 	Global StashTabYesNinjaPrice_Price := 5
 
 ; Crafting Bases
-	Global YesStashATLAS := 1
-	Global YesStashATLASCraftingIlvl := 0
-	Global YesStashATLASCraftingIlvlMin := 76
-
-	Global YesStashSTR := 1
-	Global YesStashSTRCraftingIlvl := 0
-	Global YesStashSTRCraftingIlvlMin := 76
-
-	Global YesStashDEX := 1
-	Global YesStashDEXCraftingIlvl := 0
-	Global YesStashDEXCraftingIlvlMin := 76
-
-	Global YesStashINT := 1
-	Global YesStashINTCraftingIlvl := 0
-	Global YesStashINTCraftingIlvlMin := 76
-
-	Global YesStashHYBRID := 1
-	Global YesStashHYBRIDCraftingIlvl := 0
-	Global YesStashHYBRIDCraftingIlvlMin := 76
-
-	Global YesStashJ := 1
-	Global YesStashJCraftingIlvl := 0
-	Global YesStashJCraftingIlvlMin := 76
-
-	Global YesStashAJ := 1
-	Global YesStashAJCraftingIlvl := 0
-	Global YesStashAJCraftingIlvlMin := 76
-
-	Global YesStashJewellery := 1
-	Global YesStashJewelleryCraftingIlvl := 0
-	Global YesStashJewelleryCraftingIlvlMin := 76
 
 ; Skip Maps after column #
 	Global YesSkipMaps := 0

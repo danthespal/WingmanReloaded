@@ -111,6 +111,7 @@ readFromFile(){
 	{
 		IniRead, YesEnableCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesEnableCB%k%, 1
 		IniRead, YesStashCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesStashCB%k%, 1
+		IniRead, YesStashNumberCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesStashNumberCB%k%, 16
 		IniRead, YesKeepCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesKeepCB%k%, 1
 		IniRead, YesKeepNumberCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesKeepNumberCB%k%, 1
 	}
@@ -1008,10 +1009,12 @@ updateEverything:
 	{
 		YECB := YesEnableCB%k%
 		YSCB := YesStashCB%k%
+		YSNCB := YesStashNumberCB%k%
 		YKDB := YesKeepCB%k%
 		YKNCB := YesKeepNumberCB%k%
 		IniWrite, %YECB%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesEnableCB%k%
 		IniWrite, %YSCB%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesStashCB%k%
+		IniWrite, %YSNCB%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesStashNumberCB%k%
 		IniWrite, %YKDB%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesKeepCB%k%
 		IniWrite, %YKNCB%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesKeepNumberCB%k%
 	}
