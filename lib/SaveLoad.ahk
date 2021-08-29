@@ -708,6 +708,8 @@ updateEverything:
 	FileAppend, % t, %A_ScriptDir%\save\Cookie.json
 	t := temp := ""
 
+	;Clear Settings File to Resave(remove old settings/non used)
+	FileDelete, %A_ScriptDir%\save\Settings.ini
 	;Bandit Extra options
 	IniWrite, %BranchName%, %A_ScriptDir%\save\Settings.ini, General, BranchName
 	IniWrite, %ScriptUpdateTimeInterval%, %A_ScriptDir%\save\Settings.ini, General, ScriptUpdateTimeInterval
