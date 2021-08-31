@@ -679,8 +679,8 @@
 	Global StashTabYesPredictive_Price := 5
 	Global StashTabYesNinjaPrice := 0
 	Global StashTabYesNinjaPrice_Price := 5
-
-; Crafting Bases
+	
+	
 
 ; Skip Maps after column #
 	Global YesSkipMaps := 0
@@ -693,7 +693,7 @@
 	Global YesSkipMaps_tier := 2
 ; Controller
 	Global YesController := 1
-	global checkvar:=0
+	Global checkvar:=0
 	Global YesMovementKeys := 0
 	Global YesTriggerUtilityKey := 0
 	Global TriggerUtilityKey := 1

@@ -109,11 +109,11 @@ readFromFile(){
 	;Crafting Bases
 	for k,v in WR.CustomCraftingBases.CustomBases
 	{
-		IniRead, YesEnableCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesEnableCB%k%, 1
-		IniRead, YesStashCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesStashCB%k%, 1
-		IniRead, YesStashNumberCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesStashNumberCB%k%, 16
-		IniRead, YesKeepCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesKeepCB%k%, 1
-		IniRead, YesKeepNumberCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesKeepNumberCB%k%, 1
+		IniRead, YesEnableCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesEnableCB%k%, 0
+		IniRead, YesStashCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesStashCB%k%, 0
+		IniRead, YesStashNumberCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesStashNumberCB%k%, 1
+		IniRead, YesKeepCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesKeepCB%k%, 0
+		IniRead, YesKeepNumberCB%k%, %A_ScriptDir%\save\Settings.ini, Crafting Bases Settings, YesKeepNumberCB%k%, 0
 	}
 
 
