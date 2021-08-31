@@ -1,14 +1,14 @@
 ﻿; Wingman Crafting Labels - By DanMarzola
 CustomCrafting:
-  CraftingBasesRequest()
+  ;CraftingBasesRequest()
   Global CustomCraftingBase
-
+  TabCreator := ""
   for ki, vi in WR.CustomCraftingBases.CustomBases{
-    textList%ki% := ""
+    textList%ki% := []
+    TabCreator .= (!TabCreator ? "" : "|") "Group CB"ki
     For k, v in WR.CustomCraftingBases.CustomBases[ki]
-      textList%ki% .= (!textList%ki% ? "" : ", ") v
+      textList%ki%.Push(v)
   }
-
   baseList := ""
   For k, v in Bases
   {
@@ -24,56 +24,21 @@ CustomCrafting:
       baseList .= v["name"]"|"
     }
   }
+
+  
   Gui, CustomCrafting: New
   Gui, CustomCrafting: +AlwaysOnTop -MinimizeBox
-  Gui, CustomCrafting: Add, Button, default gupdateEverything x225 y180 w150 h23, Save Configuration
-  Gui, CustomCrafting: Add, ComboBox, Sort vCustomCraftingBase xm+5 ym+28 w500, %baseList%
-  Gui, CustomCrafting: Add, Tab2, vInventoryGuiTabs x3 y3 w600 h300 -wrap , Group CB1|Group CB2|Group CB3|Group CB4|Group CB5|Group CB6|Group CB7|Group CB8|Group CB9
-  Gui, CustomCrafting: Tab, Group CB1
-  Gui, CustomCrafting: Add, Edit, vActiveCraftTier1 ReadOnly y+38 w500 r8 , %textList1%
-  Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT1 Base
-  Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT1 Base
-  Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT1 Base
-  Gui, CustomCrafting: Tab, Group CB2
-  Gui, CustomCrafting: Add, Edit, vActiveCraftTier2 ReadOnly y+38 w500 r8 , %textList2%
-  Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT2 Base
-  Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT2 Base
-  Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT2 Base
-  Gui, CustomCrafting: Tab, Group CB3
-  Gui, CustomCrafting: Add, Edit, vActiveCraftTier3 ReadOnly y+38 w500 r8 , %textList3%
-  Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT3 Base
-  Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT3 Base
-  Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT3 Base
-  Gui, CustomCrafting: Tab, Group CB4
-  Gui, CustomCrafting: Add, Edit, vActiveCraftTier4 ReadOnly y+38 w500 r8 , %textList4%
-  Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT4 Base
-  Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT4 Base
-  Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT4 Base
-  Gui, CustomCrafting: Tab, Group CB5
-  Gui, CustomCrafting: Add, Edit, vActiveCraftTier5 ReadOnly y+38 w500 r8 , %textList5%
-  Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT5 Base
-  Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT5 Base
-  Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT5 Base
-  Gui, CustomCrafting: Tab, Group CB6
-  Gui, CustomCrafting: Add, Edit, vActiveCraftTier6 ReadOnly y+38 w500 r8 , %textList6%
-  Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT6 Base
-  Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT6 Base
-  Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT6 Base
-  Gui, CustomCrafting: Tab, Group CB7
-  Gui, CustomCrafting: Add, Edit, vActiveCraftTier7 ReadOnly y+38 w500 r8 , %textList7%
-  Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT7 Base
-  Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT7 Base
-  Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT7 Base
-  Gui, CustomCrafting: Tab, Group CB8
-  Gui, CustomCrafting: Add, Edit, vActiveCraftTier8 ReadOnly y+38 w500 r8 , %textList8%
-  Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT8 Base
-  Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT8 Base
-  Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT8 Base
-  Gui, CustomCrafting: Tab, Group CB9
-  Gui, CustomCrafting: Add, Edit, vActiveCraftTier9 ReadOnly y+38 w500 r8 , %textList9%
-  Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT9 Base
-  Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT9 Base
-  Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT9 Base
+  Gui, CustomCrafting: Add, Button, default gupdateEverything x225 y250 w150 h23, Save Configuration
+  Gui, CustomCrafting: Add, Tab2, vInventoryGuiTabs x3 y3 w600 h300 -wrap , %TabCreator%
+  for ki, vi in WR.CustomCraftingBases.CustomBases{
+    Gui, CustomCrafting: Tab, Group CB%ki%
+    Gui, CustomCrafting: Add, ListView , w600 r10 -wrap -Multi Grid  vlistview%ki%, CB%ki% Bases
+    Gui, CustomCrafting: Add, Button, gAddCustomCraftingBase y+8 w60 r2 center, Add`nT%ki% Base
+    Gui, CustomCrafting: Add, Button, gRemoveCustomCraftingBase x+5 w60 r2 center, Remove`nT%ki% Base
+    Gui, CustomCrafting: Add, Button, gResetCustomCraftingBase x+5 w60 r2 center, Reset`nT%ki% Base
+    RefreshCBList(ki)
+  }
+  ;Gui, CustomCrafting: Add, ComboBox, Sort vCustomCraftingBase xm+5 ym+28 w500, %baseList%
   Gui, CustomCrafting: Show, , Edit Crafting Tiers
 Return
 
@@ -107,10 +72,11 @@ Return
 ResetCustomCraftingBase:
   RegExMatch(A_GuiControl, "T" rxNum " Base", RxMatch )
   WR.CustomCraftingBases.CustomBases[RxMatch1] := WR.CustomCraftingBases.Default[RxMatch1].Clone()
-  textList := ""
+  textList%RxMatch1% := []
   For k, v in WR.CustomCraftingBases.CustomBases[RxMatch1]
-    textList .= (!textList ? "" : ", ") v
-  GuiControl,, ActiveCraftTier%RxMatch1%, %textList%
+    textList%ki%.Push(v)
+  LV_Delete()
+  RefreshCBList(ki)
 Return
 
 CraftingBasesRequest(endAtRefresh := 0){
@@ -183,3 +149,11 @@ CraftingBasesRequest(endAtRefresh := 0){
   AuxCBObjectArray := []
 
 }
+
+RefreshCBList(number){
+  For k, v in textList%number%
+  {
+    LV_Add("",v)
+  }
+}
+Return
